@@ -1,6 +1,7 @@
 /*
     Класс Abstract_player - родитель всех игроков
 */
+
 #include <utility>
 #include "abstract_player.h"
 
