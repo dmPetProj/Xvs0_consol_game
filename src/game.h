@@ -7,7 +7,6 @@
 
 #include <array>
 #include <memory>
-#include <functional>
 
 #include "players/abstract_player.h"
 #include "board.h"
@@ -22,8 +21,7 @@ class Game {
 
     public:
 
-        Game(std::function<std::unique_ptr<Abstract_player>(FieldValues)> creator1,
-         std::function<std::unique_ptr<Abstract_player>(FieldValues)> creator2);        // инициализация игры
+        Game(std::array<std::unique_ptr<Abstract_player>, 2> players);        // инициализация игры
 
         void run() noexcept;  // запуск игры
 

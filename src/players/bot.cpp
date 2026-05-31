@@ -8,9 +8,9 @@
 
 #include "bot.h"
 
-Bot::Bot(const FieldValues ccolor) :
-/* конструктор с параметром задающим цвет игры */
-    Abstract_bot(ccolor)
+Bot::Bot(const FieldValues color) :
+/* конструктор с параметром задающим цвет игроку */
+    Abstract_bot(color)
     {}
 
 int Bot::make_move(const Board& board) const noexcept /* override */ {

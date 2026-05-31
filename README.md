@@ -31,3 +31,16 @@ Bot::Bot(const FieldValues color) :
     {}
 ```
 Полный пример рабочего бота находится в коде проекта [можно посмотреть здесь](https://github.com/dmPetProj/Xvs0_consol_game/blob/main/src/players/bot.h)
+
+Далее необходимо поместить имя вашего бота в `Matchmaker.cpp` где нужно будет поменять тип вызываемого бота на созданный вами тип
+```
+std::array<std::unique_ptr<Abstract_player>, 2> Matchmaker::make_BvsP() {
+/* игрок против бота */
+        return make<Player, Bot>(); <-- здесь вместо Bot имя вашего класса
+}
+
+std::array<std::unique_ptr<Abstract_player>, 2> Matchmaker::make_2bots() {
+/* бот против бота */
+        return make<Bot, Bot>(); <-- здесь вместо Bot имя вашего класса
+}
+```

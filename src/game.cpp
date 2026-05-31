@@ -3,32 +3,22 @@
 */
 
 #include <iostream>
-// #include <cstdlib>
-#include <ctime>
 
 #include "game.h"
 #include "utils.h"
 
-Game::Game(std::function<std::unique_ptr<Abstract_player>(FieldValues)> creator1,
-         std::function<std::unique_ptr<Abstract_player>(FieldValues)> creator2) :
+Game::Game(std::array<std::unique_ptr<Abstract_player>, 2> players) :
 /* инициализация игры */
-         board()
-{
-
-        players[0] = creator1(FieldValues::O);
-        players[1] = creator2(FieldValues::X);
-
-        std::srand(std::time(0));
-        if(std::rand() & 1)
-            std::swap( players[0], players[1] );
-
-}
+        players(std::move(players)),
+        board()
+    {}
 
 void Game::run() noexcept{
 /* запуск игры */
 
     bool curent_player = false;    // переводит ход
     unsigned short empty_fields_count = 9;  // счетчик свободных полей он же сингал о нечьей
+
     do{
 
         const int move_index = players[curent_player]->make_move(board); // читает ход, который хочет сделать игрок
@@ -40,8 +30,8 @@ void Game::run() noexcept{
         if( (board.win_check( move_index ))  )   // проверяет по координатам
             break;
 
-        empty_fields_count--;
-        curent_player = !curent_player;
+        empty_fields_count--;               // ход сделан -1 свободное поле
+        curent_player = !curent_player;     // передача хода другому игроку
 
     } while (empty_fields_count > 0);   // ничья если пустые клетки закончатся
 
