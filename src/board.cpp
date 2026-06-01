@@ -59,9 +59,9 @@ void Board::consol_print() const noexcept {
             std::cout << " | " <<
                     get_char_from_enum(board[i][j].get_value(), i*3+j);
         std::cout << " | " << std::endl;
-        if(i!=2)
-            for(int k=0;k<15;k++)
-                std::cout << "-";
+
+        for(int k=0;k<15;k++)
+            std::cout << "-" ;
         std::cout << std::endl;
     }
 }

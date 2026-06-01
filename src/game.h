@@ -10,6 +10,7 @@
 
 #include "players/abstract_player.h"
 #include "board.h"
+#include "gameresult.h"
 #include "players/player.h"
 
 class Game {
@@ -23,7 +24,7 @@ class Game {
 
         Game(std::array<std::unique_ptr<Abstract_player>, 2> players);        // инициализация игры
 
-        void run() noexcept;  // запуск игры
+        GameResult run() noexcept;  // запуск игры
 
 };
 

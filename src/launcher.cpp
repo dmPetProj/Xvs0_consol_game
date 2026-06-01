@@ -39,7 +39,9 @@ void Launcher::launch() {
                 continue;  // неверный выбор возвращаемся к меню
         }
 
-        session->run(); // Запускаем игру
+        auto reporter = session->run(); // Запускаем игру в ответ получаем класс с результатом игры
+
+        reporter.make_report();
 
         std::cout << "\nPress Enter to continue...\n"; // Ждём нажатия перед показом меню
         std::cin.ignore();

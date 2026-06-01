@@ -13,7 +13,7 @@ Game::Game(std::array<std::unique_ptr<Abstract_player>, 2> players) :
         board()
     {}
 
-void Game::run() noexcept{
+GameResult Game::run() noexcept{
 /* запуск игры */
 
     bool curent_player = false;    // переводит ход
@@ -35,10 +35,7 @@ void Game::run() noexcept{
 
     } while (empty_fields_count > 0);   // ничья если пустые клетки закончатся
 
-    if(empty_fields_count == 0)
-        std::cout << "Droy" << std::endl;
-    else
-        std::cout << "Win player - " << get_char_from_enum(this->players[curent_player]->get_color()) << std::endl;
-
-    board.consol_print();
+    return GameResult( board,
+        empty_fields_count == 0,
+        get_char_from_enum(this->players[curent_player]->get_color()) );
 }
