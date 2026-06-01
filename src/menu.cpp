@@ -4,10 +4,22 @@
 
 #include "menu.h"
 
-menu::menu(/* args */)
-{
+#include <iostream>
+
+void Menu::consol_print() const noexcept {
+/* выводит опции доступные игроку в консоль */
+    for(auto i : this->menu_lins)
+        std::cout << i << std::endl;
 }
 
-menu::~menu()
-{
+int Menu::open_dialog() const {
+/* организовывает логику общения с игроком */
+    consol_print();
+    int input;
+    do {
+        std::cout << "Enter choise(0-3):";
+        std::cin >> input;
+    } while (input < 0 || input > 4);
+
+    return input;
 }
