@@ -11,7 +11,7 @@ class Player_interface {
 /* интерфайс для игроков */
     public:
 
-        virtual int make_move(const Board& board) const noexcept = 0; // каждый игрок делает ход
+        virtual int make_move(const Board& board) const = 0; // каждый игрок делает ход
 
         virtual ~Player_interface() = default;      // деструктор по умолчанию
 };

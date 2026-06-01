@@ -13,7 +13,7 @@ Bot::Bot(const FieldValues color) :
     Abstract_bot(color)
     {}
 
-int Bot::make_move(const Board& board) const noexcept /* override */ {
+int Bot::make_move(const Board& board) const /* override */ {
 /* логика хода бота */
     std::srand(std::time(0));
     return std::rand() % 9;

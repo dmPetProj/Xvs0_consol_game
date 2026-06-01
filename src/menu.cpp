@@ -6,18 +6,18 @@
 
 #include <iostream>
 
-void Menu::consol_print() const noexcept {
+void Menu::consol_print() noexcept {
 /* выводит опции доступные игроку в консоль */
-    for(auto i : this->menu_lins)
+    for(auto i : menu_lins)
         std::cout << i << std::endl;
 }
 
-int Menu::open_dialog() const {
+int Menu::open_dialog() {
 /* организовывает логику общения с игроком */
     consol_print();
     int input;
     do {
-        std::cout << "Enter choise(0-3):";
+        std::cout << "Enter choise(0-3): ";
         std::cin >> input;
     } while (input < 0 || input > 4);
 

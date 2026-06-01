@@ -7,10 +7,17 @@
 
 #include <string>
 
+enum GameModes{
+// хранит опции которые может выбрать игрок на старте
+    PvsP = 1,   // Player vs Player
+    PvsB = 2,   // PLayer vs Bot
+    BvsB = 3    // Bot vs Bot
+};
+
 class Menu {
     private:
 
-        const std::string menu_lins[4] = {
+        inline static const std::string menu_lins[4] = {
         // хранит опции которые может выбрать игрок при входе
             "1. Start game to play with another player",
             "2. Start game to play with bot",
@@ -20,17 +27,11 @@ class Menu {
 
     public:
 
-        Menu() = default;       // конструктор по умолчанию
-        ~Menu() = default;      // деструктор по умолчанию
+        static void consol_print() noexcept; // выводит опции доступные игроку в консоль
 
-        void consol_print() const noexcept; // выводит опции доступные игроку в консоль
-
-        int open_dialog() const;  // организовывает логику общения с игроком
-                                           // возвращает значение опции которую выбрал игрок
+        static int open_dialog();  // организовывает логику общения с игроком
+                                   // возвращает значение опции которую выбрал игрок
 
 };
-
-
-
 
 #endif

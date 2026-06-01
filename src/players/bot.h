@@ -13,7 +13,7 @@ class Bot : public Abstract_bot {
 
         Bot(const FieldValues color);    // конструктор с параметром задающим цвет игроку
 
-        int make_move (const Board& board) const noexcept override;   // логика хода бота
+        int make_move (const Board& board) const override;   // логика хода бота
 
 };
 

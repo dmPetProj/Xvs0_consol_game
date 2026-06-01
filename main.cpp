@@ -1,10 +1,8 @@
 #include <iostream>
 
-#include "src/utils.h"
-#include "src/game.h"
-#include "src/matchmaker.h"
+#include "src/launcher.h"
 
 int main(){
-    Game* testgame = new Game( Matchmaker::make_BvsP() );
-    testgame->run();
+    Launcher launcher;
+    launcher.launch();
 }

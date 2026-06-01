@@ -15,7 +15,7 @@ class Player : public Abstract_player {
 
         Player(const FieldValues ccolor);            // конструктор задает цвет игрока
 
-        int make_move(const Board& board) const noexcept override;   // логика хода
+        int make_move(const Board& board) const override;   // логика хода
 
 };
 
