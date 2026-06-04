@@ -5,24 +5,22 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <array>
-#include <memory>
-
-#include "players/abstract_player.h"
+#include "types_game.h"
 #include "board.h"
 #include "gameresult.h"
-#include "players/player.h"
+
 
 class Game {
+
     private:
 
         Board board; // игровое поле
 
-        std::array<std::unique_ptr<Abstract_player>, 2> players; // два игрока
+        PlayerArray players; // два игрока
 
     public:
 
-        Game(std::array<std::unique_ptr<Abstract_player>, 2> players);        // инициализация игры
+        Game(PlayerArray players);  // инициализация игры
 
         GameResult run() noexcept;  // запуск игры
 

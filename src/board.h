@@ -5,11 +5,9 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <string>
 #include "field.h"
 
 class Board {
-/* игровая доска */
 
     private:
 

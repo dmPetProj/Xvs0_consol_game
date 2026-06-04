@@ -7,18 +7,17 @@
 
 #include "game.h"
 
+class Launcher {
 
-class Launcher
-{
-private:
+    private:
 
-    Game *session;
+        Game *session;
 
-public:
-    Launcher();             // конструктор по умолчанию
-    ~Launcher();            // деструктор по умолчанию
+    public:
+        Launcher();             // конструктор по умолчанию
+        ~Launcher();            // деструктор по умолчанию
 
-    void launch();          // запуск цикла игры
+        void launch();          // запуск цикла игры
 
 };
 

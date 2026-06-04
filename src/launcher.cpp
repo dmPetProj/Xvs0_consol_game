@@ -15,6 +15,7 @@ Launcher::Launcher()
     {}
 
 void Launcher::launch() {
+
     while (true) {
 
         int game_config_index = Menu::open_dialog(); // запрашиваем игровой режим

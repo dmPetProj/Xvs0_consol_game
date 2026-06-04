@@ -5,27 +5,24 @@
 #ifndef MATCH_MAKER_H
 #define MATCH_MAKER_H
 
-#include <array>
-#include <memory>
-#include <functional>
-
 #include "players/abstract_player.h"
+#include "types_game.h"
+
 
 class Matchmaker{
-/* собирает массив игроков */
 
     private:
 
         template<typename T1, typename T2>
-        static std::array<std::unique_ptr<Abstract_player>, 2> make();  // общая логика
+        static PlayerArray make();  // общая логика
 
     public:
 
-        static std::array<std::unique_ptr<Abstract_player>, 2> make_2players(); // два живых игрока
+        static PlayerArray make_2players(); // два живых игрока
 
-        static std::array<std::unique_ptr<Abstract_player>, 2> make_BvsP(); // игрок против бота
+        static PlayerArray make_BvsP(); // игрок против бота
 
-        static std::array<std::unique_ptr<Abstract_player>, 2> make_2bots();    // бот против бота
+        static PlayerArray make_2bots();    // бот против бота
 
 };
 

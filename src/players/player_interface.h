@@ -8,7 +8,7 @@
 #include "../board.h"
 
 class Player_interface {
-/* интерфайс для игроков */
+
     public:
 
         virtual int make_move(const Board& board) const = 0; // каждый игрок делает ход

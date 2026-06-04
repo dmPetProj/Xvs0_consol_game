@@ -1,5 +1,5 @@
 /*
-    Класс Field - одно поле доски
+    Класс Field - одно поле игровой доски
 */
 
 #ifndef FIELD_H
@@ -8,7 +8,6 @@
 #include "utils.h"
 
 class Field{
-/* Одно поле доски */
 
     private:
 
@@ -18,8 +17,6 @@ class Field{
 
         Field() = default;  // конструктор по умолчанию
         ~Field() = default; // деструктор по умоланию
-
-        Field(const FieldValues value); // конструктор со значением ячейки
 
         FieldValues get_value() const noexcept; // возвращает значение ячейки
 

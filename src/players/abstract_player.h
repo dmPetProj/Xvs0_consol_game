@@ -1,5 +1,5 @@
 /*
-    Класс Abstract_player - реализует фабрику играков
+    Класс Abstract_player - родитель всех игроков и ботов
 */
 
 #ifndef ABSCTRACT_PLAYER_H
@@ -9,7 +9,6 @@
 #include "../utils.h"
 
 class Abstract_player : public Player_interface {
-/* Абстрактный класс родитель для всех классов игроков */
 
     protected:
 

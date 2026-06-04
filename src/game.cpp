@@ -7,7 +7,7 @@
 #include "game.h"
 #include "utils.h"
 
-Game::Game(std::array<std::unique_ptr<Abstract_player>, 2> players) :
+Game::Game(PlayerArray players) :
 /* инициализация игры */
         players(std::move(players)),
         board()
@@ -35,7 +35,7 @@ GameResult Game::run() noexcept{
 
     } while (empty_fields_count > 0);   // ничья если пустые клетки закончатся
 
-    return GameResult( board,
+    return GameResult( board,           // возврат объекта класса с результатом
         empty_fields_count == 0,
         get_char_from_enum(this->players[curent_player]->get_color()) );
 }

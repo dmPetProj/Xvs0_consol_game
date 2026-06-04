@@ -1,13 +1,11 @@
 /*
-    Класс PLayer - описывает поведение игрока
+    Класс PLayer - реализует игрока играющего через консоль
 */
 
 #ifndef PLAYER_H
 #define PLAYER_H
 
 #include "abstract_player.h"
-
-// #include <iostream>
 
 class Player : public Abstract_player {
 /* Класс с инфорй о игроке */

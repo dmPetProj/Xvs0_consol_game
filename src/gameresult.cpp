@@ -14,6 +14,7 @@ GameResult::GameResult(const Board &board, const bool is_drow, const char winner
     {}
 
 void GameResult::make_report() const noexcept {
+/* выводит в консоль результат игры */
     if(is_drow)
         std::cout << "No winners in this match\n";
     else

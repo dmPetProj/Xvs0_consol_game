@@ -5,8 +5,6 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <string>
-
 inline constexpr int WEIGHT = 3;    // ширина игроого поля
 inline constexpr int HIGHT = 3;     // высота игрового поля
 

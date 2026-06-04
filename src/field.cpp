@@ -1,13 +1,8 @@
 /*
-    Класс Field - одно поле доски
+    Класс Field - одно поле игровой доски
 */
 
 #include "field.h"
-
-Field::Field(const FieldValues value) :
-/* конструктор по умолчанию */
-    value(value)
-    {}
 
 FieldValues Field::get_value() const noexcept {
 /* возвращает значение ячейки */
