@@ -34,13 +34,21 @@ Bot::Bot(const FieldValues color) :
 
 Далее необходимо поместить имя вашего бота в `Matchmaker.cpp` где нужно будет поменять тип вызываемого бота на созданный вами тип
 ```
-std::array<std::unique_ptr<Abstract_player>, 2> Matchmaker::make_BvsP() {
+PlayerArray Matchmaker::make_BvsP() {
 /* игрок против бота */
-        return make<Player, Bot>(); <-- здесь вместо Bot имя вашего класса
+        return make<Player, Bot>(); <-- здесь вместо Bot имя вашего
 }
 
-std::array<std::unique_ptr<Abstract_player>, 2> Matchmaker::make_2bots() {
+PlayerArray Matchmaker::make_2bots() {
 /* бот против бота */
-        return make<Bot, Bot>(); <-- здесь вместо Bot имя вашего класса
+        return make<Bot, Bot>();    <-- здесь вместо Bot имя вашего
 }
+```
+Не забудьте импортировать тип!
+```
+#include "utils.h"
+#include "players/player.h"
+#include "players/bot.h"
+
+#include "players/my_bot.h" <--
 ```
